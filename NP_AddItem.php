@@ -20,7 +20,7 @@ class NP_AddItem extends NucleusPlugin {
 	function getName()        {return 'AddItem';}
 	function getAuthor()      {return 'Peter Hardy | PiyoPiyoNaku';}
 	function getURL()         {return 'http://wakka.xiffy.nl/doku.php?id=additem';}
-	function getVersion()     {return '1.4';}
+	function getVersion()     {return '1.5';}
 	function getDescription() {return _ADDITEM_DESC;}
 	function supportsFeature($what) {return in_array($what,array('SqlTablePrefix'));}
 	
