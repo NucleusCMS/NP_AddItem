@@ -39,7 +39,7 @@ class NP_AddItem extends NucleusPlugin {
 
 	function init()
 	{
-		$language = ereg_replace( '[\\|/]', '', getLanguageName());
+		$language = str_replace( array('\\','/'), '', getLanguageName());
 		if ($language == "japanese-utf8")
 		{
 			define(_ADDITEM_DESC, "新規投稿ページを直接開くためのリンクを自動作成するプラグイン。 スキンへの記述： &lt;%AddItem%&gt;");
