@@ -108,4 +108,3 @@ class NP_AddItem extends NucleusPlugin {
 		}
 	}
 }
-?> 
