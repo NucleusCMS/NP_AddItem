@@ -17,30 +17,17 @@
 # 1.0 - Initial release.
 
 class NP_AddItem extends NucleusPlugin {
-	function getName() {
-		return 'AddItem';
-	}
-
-	function getAuthor() {
-		return 'Peter Hardy | PiyoPiyoNaku';
-	}
-
-	function getURL() {
-		return 'http://www.renege.net';
-	}
-
-	function getVersion() {
-		return '1.4';
-	}
-
-	function getDescription() {
-		return _ADDITEM_DESC;
-	}
-
+	function getName()        {return 'AddItem';}
+	function getAuthor()      {return 'Peter Hardy | PiyoPiyoNaku';}
+	function getURL()         {return 'http://wakka.xiffy.nl/doku.php?id=additem';}
+	function getVersion()     {return '1.4';}
+	function getDescription() {return _ADDITEM_DESC;}
+	function supportsFeature($what) {return in_array($what,array('SqlTablePrefix'));}
+	
 	function init()
 	{
 		$language = str_replace( array('\\','/'), '', getLanguageName());
-		if ($language == "japanese-utf8")
+		if ($language == 'japanese-utf8')
 		{
 			define(_ADDITEM_DESC, "新規投稿ページを直接開くためのリンクを自動作成するプラグイン。 スキンへの記述： &lt;%AddItem%&gt;");
 			define(_ADDITEM_TEXT, "アイテムの追加");
@@ -99,12 +86,4 @@ class NP_AddItem extends NucleusPlugin {
 		return quickQuery($query);
 	}
 
-	function supportsFeature($what) {
-		switch ($what) {
-		case 'SqlTablePrefix':
-			return 1;
-		default:
-			return 0;
-		}
-	}
 }
